@@ -1,58 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;PDF Parser&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Upload PDF and Extract Data&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input type="file" id="pdf-upload" accept="application/pdf" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;select id="dropdown" style="margin-top: 20px;"&gt;&lt;/select&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('pdf-upload').addEventListener('change', function (e) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const file = e.target.files[0];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (file &amp;&amp; file.type === "application/pdf") {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const fileReader = new FileReader();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>fileReader.onload = function () {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const typedArray = new Uint8Array(this.result);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>pdfjsLib.getDocument(typedArray).promise.then(pdf =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>pdf.getPage(1).then(page =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>page.getTextContent().then(content =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const textItems = content.items.map(item =&gt; item.str);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const dropdown = document.getElementById('dropdown');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>dropdown.innerHTML = "";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>textItems.forEach(text =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>const option = document.createElement('option');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>option.value = text;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>option.text = text;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>dropdown.appendChild(option);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>fileReader.readAsArrayBuffer(file);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>PDF Parser</title>
+</head>
+
+<body>
+  <h1>Upload PDF and Extract Data</h1>
+  <input type="file" id="pdf-upload" accept="application/pdf" />
+  <select id="dropdown" style="margin-top: 20px;"></select>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script>
+    document.getElementById('pdf-upload').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file && file.type === "application/pdf") {
+        const fileReader = new FileReader();
+        fileReader.onload = function() {
+          const typedArray = new Uint8Array(this.result);
+          pdfjsLib.getDocument(typedArray).promise.then(pdf => {
+            pdf.getPage(1).then(page => {
+              page.getTextContent().then(content => {
+                const textItems = content.items.map(item => item.str);
+                const dropdown = document.getElementById('dropdown');
+                dropdown.innerHTML = "";
+                textItems.forEach(text => {
+                  const option = document.createElement('option');
+                  option.value = text;
+                  option.text = text;
+                  dropdown.appendChild(option);
+                });
+              });
+            });
+          });
+        };
+        fileReader.readAsArrayBuffer(file);
+      }
+    });
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
 </body>
 </html>
